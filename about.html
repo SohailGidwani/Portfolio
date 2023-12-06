@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/icons8-gamer-16.png">
+    <title>Sohail Gidwani</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+  </head>
+  <body>
+    <nav id="desktop-nav">
+      <div class="logo"><a href="index.html" style="text-decoration: none;">Sohail Gidwani</a></div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="exp.html">Skills & Projects</a></li>
+          <!-- <li><a href="#projects">Projects</a></li> -->
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav id="hamburger-nav">
+      <div class="logo">Sohail Gidwani</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="about.html" onclick="toggleMenu()">About</a></li>
+          <li><a href="exp.html" onclick="toggleMenu()">Skills & Projects</a></li>
+          <li><a href="contact.html" onclick="toggleMenu()">Contact</a></li>
+        </div>
+      </div>
+    </nav>
+    
+    <main>
+        <section id="about">
+          <p class="section__text__p1">Get To Know More</p>
+            <h1 class="title">About Me</h1>
+            <div class="section-container">
+                <div class="section__pic-container">
+                    <img
+                    src="./assets/Animated-Sohail.png"
+                    alt="Profile picture"
+                    class="about-pic"
+                    />
+        </div>
+        <div class="about-details-container">
+          <div class="about-containers">
+              <div class="details-container">
+                  <img
+                  src="./assets/medal.png"
+                  alt="Experience icon"
+                  class="icon"
+                  />
+                  <h3>Experience</h3>
+                  <p>2+ years <br />Software Development</p>
+                </div>
+            <div class="details-container">
+                <img
+                src="./assets/edu.png"
+                alt="Education icon"
+                class="icon"
+                />
+                <h3>Education</h3>
+                <p>B.E. Bachelors Degree<br/>Computer Engineering</p>
+            </div>
+        </div>
+        <div class="text-container">
+            <p>
+                Energizing the software development realm, I've masterminded projects like an AI-driven chatbot and a revamped loan system with React and Java Spring Boot, a testament to my innovation. My creativity and problem-solving acumen clinched a hackathon victory, highlighting my unique approach. Rooted in Computer Engineering with a zeal for AI and machine learning, I expertly weave technical prowess with real-world impact. Off-duty, the allure of cinema's storytelling enriches my professional imagination.
+            </p>
+          </div>
+        </div>
+    </div>
+    <img
+    src="./assets/arrow.png"
+    alt="Arrow icon"
+    class="icon arrow"
+    onclick="location.href='./#experience'"
+    />
+</section>
+</main>
+<!-- <footer>
+      <p>Copyright &#169; 2023 Sohail Gidwani. All Rights Reserved.</p>
+    </footer> -->
+    <script src="script.js"></script>
+  </body>
+</html>
