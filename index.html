@@ -8,6 +8,7 @@
     <title>Sohail Gidwani</title>
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./styles/mediaqueries.css" />
+    <link rel="stylesheet" href="./styles/index.css">
   </head>
   <body style="padding-top: 0;">
     <!-- <nav id="desktop-nav">
@@ -39,12 +40,12 @@
     <main>
     <section id="profile">
       <div class="section__pic-container">
-        <img src="assets\Sohail -portfolio.png" alt="Sohail Gidwani profile picture" />
+        <img src="assets/SohailGidwani.png" class="tilt-image" alt="Sohail Gidwani profile picture" />
         </div>
         <div class="section__text">
-          <p class="section__text__p1">Hello, I'm</p>
-          <h1 class="title">Sohail Gidwani</h1>
-          <p class="section__text__p2">Software Developer</p>
+          <p class="section__text__p1 p1_index"></p>
+          <h1 class="title title_index"></h1>
+          <p class="section__text__p2 p2_index"></p>
           <div class="btn-container">
             <button
             class="btn btn-color-1"
@@ -63,18 +64,15 @@
           </button>
         </div>
         <div id="socials-container">
-          <img
-          src="./assets/linkedin.png"
-          alt="My LinkedIn profile"
-            class="icon"
-            onclick="location.href='https://www.linkedin.com/in/sohail-gidwani/'"
-            />
-          <img
-          src="./assets/github.png"
-            alt="My Github profile"
-            class="icon"
-            onclick="location.href='https://github.com/SohailGidwani'"
-          />
+          <div class="icon-container">
+            <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon" onclick="location.href='https://www.linkedin.com/in/sohail-gidwani/'" />
+            <span class="tooltip">LinkedIn</span>
+          </div>
+        
+          <div class="icon-container">
+            <img src="./assets/github.png" alt="My Github profile" class="icon" onclick="location.href='https://github.com/SohailGidwani'" />
+            <span class="tooltip">GitHub</span>
+          </div>
         </div>
       </div>
     </section>
@@ -90,7 +88,7 @@
           }
       };
   </script> -->
-  
-    <script src="./scripts/script.js"></script>
+
+  <script src="./scripts/script.js"></script>
   </body>
 </html>

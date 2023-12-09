@@ -4,40 +4,65 @@ function toggleMenu() {
   menu.classList.toggle("open");
   icon.classList.toggle("open");
 }
-// document.addEventListener("DOMContentLoaded", () => {
-//     const navLinks = document.querySelectorAll('nav a');
-//     const mainContent = document.querySelector('main'); // Adjust this selector based on your HTML structure
 
-//     navLinks.forEach(link => {
-//         link.addEventListener('click', function(e) {
-//             e.preventDefault();
-//             const url = this.getAttribute('href');
-            
-//             fetch(url)
-//                 .then(response => response.text())
-//                 .then(html => {
-//                     const newContent = new DOMParser().parseFromString(html, 'text/html');
-                    
-//                     // Slide out current content
-//                     mainContent.classList.add('slide-out');
+function typeEffect(element, text, speed, delay, callback) {
+  setTimeout(() => {
+    let i = 0;
+    function typing() {
+      if (i < text.length) {
+        element.textContent += text.charAt(i);
+        i++;
+        setTimeout(typing, speed);
+      } else if (callback) {
+        callback();
+      }
+    }
+    typing();
+  }, delay);
+}
 
-//                     setTimeout(() => {
-//                         // Replace content and slide in
-//                         mainContent.innerHTML = newContent.querySelector('main').innerHTML; // Replace 'main' with the correct container
-//                         mainContent.classList.remove('slide-out');
-//                         mainContent.classList.add('slide-in');
+// Cursor effect
+function blinkCursor(cursorElement) {
+  cursorElement.classList.add('typing');
+  function blink() {
+    cursorElement.classList.toggle('typing');
+    setTimeout(blink, 500);
+  }
+  blink();
+}
 
-//                         setTimeout(() => mainContent.classList.remove('slide-in'), 500);
-//                     }, 500);
+// Get the elements by class name
+const p1 = document.querySelector('.p1_index');
+const h1 = document.querySelector('.title_index');
+const p2 = document.querySelector('.p2_index');
+const cursor = document.createElement('span');
+cursor.classList.add('cursor');
+document.body.appendChild(cursor);
 
-//                     history.pushState({}, '', url);
-//                 });
-//         });
-//     });
+// Set initial typing speed
+const typingSpeed = 180;
 
-//     window.addEventListener('popstate', () => {
-//         window.location.reload();
-//     });
-// });
+// Clear the text content and append cursor
+p1.textContent = '';
+p1.appendChild(cursor);
+h1.textContent = '';
+p2.textContent = '';
+
+// Start typing the first line
+typeEffect(p1, "Hello, I'm", typingSpeed, 0, () => {
+  // Move cursor to the next line and start typing
+  h1.appendChild(cursor);
+  typeEffect(h1, "Sohail Gidwani", typingSpeed, 0, () => {
+    // Move cursor to the next line and start typing
+    p2.appendChild(cursor);
+    typeEffect(p2, "Software Developer", typingSpeed, 0, () => {
+      // Start blinking the cursor at the end
+      blinkCursor(cursor);
+    });
+  });
+});
+
+
+
 
 

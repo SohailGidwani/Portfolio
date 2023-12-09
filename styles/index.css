@@ -1,0 +1,84 @@
+/* Typing animation cursor effect */
+/* .typing-animation {
+    border-right: .15em solid;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: cursorBlink 1s infinite;
+  }
+  
+  /* Cursor blink animation */
+  /* @keyframes cursorBlink {
+    50% {
+      border-color: transparent;
+    }
+  } */
+  
+  /* Apply to the specific elements */
+  /* .section__text__p1, .title, .section__text__p2 {
+    display: inline-block;
+  }  */
+/* Hide the cursor by default */
+.cursor {
+    display: inline-block;
+    width: 10px;
+    background-color: black;
+    margin-left: 5px;
+    visibility: hidden;
+  }
+  
+  /* Typing animation cursor effect */
+  .typing {
+    visibility: visible;
+    animation: cursorBlink 1s infinite;
+  }
+  
+  /* Cursor blink animation */
+  @keyframes cursorBlink {
+    0%, 100% { visibility: visible; }
+    50% { visibility: hidden; }
+  }
+  
+
+
+
+/* Base styling for the image */
+/* .portfolio-image {
+    transition: transform 0.5s ease;
+    transform-style: preserve-3d;
+} */
+
+/* Hover effect */
+/* .portfolio-image:hover {
+    transform: rotateY(20deg) rotateX(10deg);
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.2);
+}
+
+.section__pic-container{
+    perspective: 1000px;
+}
+.portfolio-image {
+    backface-visibility: hidden;
+} */
+
+/* .floating-image {
+    animation: float 3s ease-in-out infinite;
+    will-change: transform;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+} */
+
+/* Base styling */
+/* .tilt-image {
+    transition: transform 0.5s ease;
+    transform-style: preserve-3d;
+    perspective: 1000px; /* Adjust as needed */
+/* } */
+
+/* Hover Effect */
+/* .tilt-image:hover {
+    transform: rotateY(calc(10deg * var(--mouse-x))) rotateX(calc(-10deg * var(--mouse-y)));
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.2);
+} */
