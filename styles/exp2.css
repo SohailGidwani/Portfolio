@@ -127,7 +127,7 @@ nav {
 /* SECTIONS */
 section {
   padding-top: 4vh;
-  max-height: 80vh;
+  max-height: 85vh;
   margin: 0 10rem;
   box-sizing: border-box;
   min-height: fit-content;
@@ -227,6 +227,7 @@ section {
   border-color: #4caf50;
 }
 
+/* Existing Styles for Skill Pills */
 .frontend ul li, .backend ul li, .other ul li {
   position: relative;
   display: inline-block;
@@ -235,9 +236,11 @@ section {
   margin: 5px;
   border: 1px solid;
   border-radius: 15px;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease; /* Updated to animate all properties */
+  cursor: pointer;
 }
 
+/* Color-specific borders for skill categories */
 .frontend ul li {
   border-color: #dc3545;
 }
@@ -250,7 +253,8 @@ section {
   border-color: #007bff;
 }
 
-.frontend ul li:hover {
+/* Hover effects */
+/* .frontend ul li:hover {
   background-image: linear-gradient(to right, #ff7e5f, #feb47b);
 }
 
@@ -260,45 +264,55 @@ section {
 
 .other ul li:hover {
   background-image: linear-gradient(to right, #4b6cb7, #182848);
-}
+} */
 
-.skill-tooltip {
+/* New CSS for skill descriptions */
+/* .skill-description {
+  display: none;
   position: absolute;
-  visibility: hidden;
-  opacity: 0;
-  position: absolute;
-  z-index: 1;
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
   white-space: nowrap;
-  padding: 5px 10px;
   background-color: black;
   color: white;
   text-align: center;
   border-radius: 6px;
-  transition: opacity 0.3s ease, visibility 0s ease;
+  padding: 5px 10px;
+  z-index: 1;
+  margin-left: 10px;  */
+  /* Spacing from the pill */
+/* } */
+
+.skill-description {
+  display: none;
 }
 
-.skill-tooltip::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: black transparent transparent transparent;
-  transform: translateX(-50%);
+/* CSS for expanded skill pills */
+.skill-pill.expanded .skill-description {
+  display: inline; /* Show description on expansion */
+  padding-left: 10px; /* Spacing between the skill name and description */
 }
 
-li:hover .skill-tooltip {
-  visibility: visible;
-  opacity: 1;
+/* Styles for Expanded Skill Pills with Gradient */
+/* .skill-pill.expanded {
+  background-image: linear-gradient(to right, #ff7e5f, #feb47b);  */
+  /* Example gradient */
+  /* color: #000;  */
+  /* Optional: Change text color if needed */
+/* } */
+
+/* Example Specific Gradients for Different Categories */
+.frontend .skill-pill.expanded {
+  background-image: linear-gradient(to right, #ff7e5f, #feb47b); /* Frontend gradient */
 }
 
-li:hover{
-    cursor: zoom-in;
+.backend .skill-pill.expanded {
+  background-image: linear-gradient(to right, #00b09b, #96c93d); /* Backend gradient */
+}
+
+.other .skill-pill.expanded {
+  background-image: linear-gradient(to right, #4b6cb7, #182848); /* Other gradient */
 }
 /* PROJECTS SECTION */
 .projects-grid {

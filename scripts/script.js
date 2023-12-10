@@ -5,6 +5,22 @@ function toggleMenu() {
   icon.classList.toggle("open");
 }
 
+document.querySelectorAll('.frontend ul li, .backend ul li, .other ul li').forEach(pill => {
+  pill.addEventListener('click', function() {
+    // Collapse any expanded pills
+    document.querySelectorAll('.frontend ul li.expanded, .backend ul li.expanded, .other ul li.expanded')
+      .forEach(expandedPill => {
+        if (expandedPill !== this) { // Check to avoid collapsing the currently clicked pill
+          expandedPill.classList.remove('expanded');
+        }
+      });
+
+    // Toggle the clicked pill
+    this.classList.toggle('expanded');
+  });
+});
+
+
 function typeEffect(element, text, speed, delay, callback) {
   setTimeout(() => {
     let i = 0;
