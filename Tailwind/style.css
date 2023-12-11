@@ -1,0 +1,389 @@
+/* styles.css */
+/* Custom styles */
+.custom-green-bg { background-color: #4caf50; }
+.custom-green-text { color: #4caf50; }
+.custom-black { background-color: #000000; }
+.transition-transform { transition: transform 0.3s; }
+.scale-hover:hover { transform: scale(1.05); }
+
+/* Profile and Text Container */
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+@media (min-width: 1024px) {
+    .profile-container {
+      flex-direction: row;
+      justify-content: center; /* Center the items */
+      align-items: center; /* Align items vertically */
+    }
+  
+    .text-container {
+      margin-left: 4rem; /* Adjust the value as needed to create a gap */
+      text-align: left; /* Align the text to the left for larger screens */
+    }
+  
+    .profile-picture {
+      margin-right: 4rem; /* You can also apply margin to the image instead */
+    }
+  }
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem; /* Size */
+    margin: 0.5rem; /* Spacing between buttons */
+    font-weight: 600; /* Font weight */
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    background-color: #4caf50; /* Background color */
+    color: white; /* Text color */
+    border: none; /* No border */
+    font-size: 1rem; /* Font size */
+    line-height: 1.5;
+    border-radius: 9999px; /* Fully rounded edges for a pill shape */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    text-decoration: none; /* No underline */
+    cursor: pointer; /* Indicates the button is clickable */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16); /* Subtle shadow for depth */
+  }
+  
+  .button:hover {
+    background-color: #367c2b; /* Darker shade on hover */
+    color: #ffffff;
+    transform: scale(1.1); /* Slightly larger on hover for an overwhelming effect */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25); /* More prominent shadow on hover */
+  }
+  
+  /* Adjust button layout for different screen sizes */
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Spacing between buttons */
+  }
+/* Profile Picture */
+.profile-picture {
+    position: relative;
+    z-index: 1; /* Above the particles */
+    border-radius: 9999px;
+    border: 4px solid #4caf50;
+    width: 16rem; /* Increase the size as needed */
+    height: auto; /* Keep height auto to maintain aspect ratio */
+  
+}
+/* Particles Container */
+.particles-container {
+    position: fixed; /* Fixed instead of absolute so it's relative to the viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Behind the content but above the background */
+    pointer-events: none; /* Allows click through */
+  }
+  
+/* Text Container */
+.text-container {
+  max-width: 640px; /* Adjust as necessary for your design */
+  text-align: center;
+}
+
+/* Social Icons */
+.social-icon {
+  color: #ffffff; /* White color by default */
+  font-size: 1.5rem;
+}
+
+.social-icon:hover {
+  color: #4caf50; /* Green color on hover */
+}
+/* New About Section Styles */
+#about {
+    background: #00000000; /* Assuming you want a black background */
+  }
+  
+  #about img {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25); /* Optional: Adds a shadow to the images */
+  }
+  
+  #about h2 {
+    color: #fff; /* White color for the title */
+    margin-bottom: 1rem;
+  }
+  
+  #about h3 {
+    color: #4caf50; /* Use the green color for subheadings */
+  }
+  
+  #about p {
+    color: rgba(255, 255, 255, 0.7); /* Slightly transparent white for the text */
+  }
+  #about-text {
+    position: relative;
+    color: #fff;
+    cursor: pointer;
+}
+
+.highlight {
+    position: relative;
+    background-image: linear-gradient(120deg, #4caf50 0%, #8bc34a 100%);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    font-weight: bold;
+    animation: highlight-animation 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes highlight-animation {
+    0% {
+      transform: translateY(-2px);
+    }
+    100% {
+      transform: translateY(2px);
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+  }
+
+/* #about-text:hover {
+    background: linear-gradient(120deg, #ffffff 0%, #000000 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0.2em;
+    background-position: 0 88%;
+    transition: background-size 0.25s ease-in;
+} */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: opacity 0.3s ease-in-out;
+}
+
+.modal-content {
+    background-color: #000000;
+    color: #fff;
+    position: relative;
+    z-index: 2; 
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+@media (max-width: 639px) {
+    .button-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Creates a responsive grid layout */
+      gap: 10px; /* Spacing between buttons */
+      justify-content: center; /* Center buttons in the container */
+    }
+  
+    .button {
+      padding: 0.75rem 1.5rem; /* Smaller padding on small screens */
+    }
+  }
+
+  /* Button layout on larger screens */
+  @media (min-width: 640px) {
+    .button-container {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+
+
+/* Skills Section Styles */
+#experience {
+    /* If you need custom styles for this section, add them here */
+    background-color: #00000000;
+}
+
+.experience-entry {
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background for the entries */
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+.experience-entry h3 {
+    color: #4caf50; /* Green color for headings */
+}
+
+.skill-pill {
+    display: inline-block;
+    background-color: rgba(76, 175, 80, 0.3); /* Semi-transparent background for the pills */
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px; /* Fully rounded edges */
+    margin-right: 0.5rem; /* Space between pills */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.skill-pill:hover {
+    background-color: rgba(76, 175, 80, 0.6); /* Darker background on hover */
+    transform: translateY(-2px); /* Slightly lift the pill */
+}
+
+.skill-description {
+    display: none; /* Hide descriptions by default */
+}
+
+.skill-pill.expanded .skill-description {
+    display: inline; /* Show description when expanded */
+}
+
+/* Projects Section Styles */
+#projects {
+    /* If you need custom styles for this section, add them here */
+    background-color: #00000000;
+}
+
+.project-card {
+    position: relative;
+    overflow: hidden; /* Ensure the overlay is contained within the card */
+}
+
+.project-info h4 {
+    color: #4caf50; /* Green color for project titles */
+}
+
+.project-overlay {
+    transition: opacity 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.project-overlay-content {
+    transform: translateY(0); /* Start with overlay content in view */
+    transition: transform 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.group:hover .project-overlay {
+    opacity: 1; /* Show overlay on hover */
+}
+
+.group:hover .project-overlay-content {
+    transform: translateY(-0.5rem); /* Slight raise on hover */
+}
+
+/* Ensure this class exists to prevent overlay from blocking interaction */
+.group-hover\:opacity-100 {
+    opacity: 0; /* Default state */
+}
+#contact{
+    background-color: #00000000;
+}
+#mock-code-editor {
+    background: #282c34;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    position: relative;
+}
+
+.editor-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 8px 12px;
+    background: #21252b;
+    border-radius: 3px 3px 0 0;
+}
+
+.window-controls {
+    display: flex;
+}
+
+.control-button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.minimize { background: #ffbd44; }
+.maximize { background: #19c759; }
+.close    { background: #ff605c; }
+
+.code-content {
+    color: #abb2bf;
+    font-family: 'Courier New', monospace;
+    padding: 20px;
+    height: 360px; /* Adjust as needed */
+    overflow-y: auto;
+}
+
+  
+  /* Create a class for the animation */
+  .run-animation {
+    animation: slideUp 1s ease forwards;
+  }
+  
+  /* Initially hide elements to animate */
+  .animate-on-scroll {
+    opacity: 0; /* Start invisible */
+    transform: translateY(20px); /* Start below their final position */
+  }
+  
+/* Additional Media Queries for Responsive Adjustments */
+@media (max-width: 768px) {
+    .experience-entry,
+    .project-card {
+        width: auto; /* Adjust width on smaller screens */
+    }
+}
+
+@media (max-width: 640px) {
+    .skill-pill {
+        margin-bottom: 0.5rem; /* Stack pills on smaller screens */
+    }
+}
+    /* Hides the scrollbar track */
+::-webkit-scrollbar-track {
+    background: transparent; /* Makes the track background transparent */
+  }
+  
+  /* Styles the scrollbar handle */
+  ::-webkit-scrollbar-thumb {
+    background: #4caf50; /* Your desired color for the scrollbar thumb */
+    border-radius: 10px; /* Makes the scrollbar thumb rounded */
+    border: 3px solid transparent; /* Can adjust or remove border as necessary */
+    background-clip: content-box; /* This prevents the background from spilling into the border area */
+  }
+  
+  /* Optional: Styles the scrollbar handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #4caf50; /* Darker color on hover */
+  }
+  
+  /* Sets the size of the scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px; /* Adjust the width as necessary */
+  }
